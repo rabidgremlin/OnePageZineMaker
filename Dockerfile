@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 RUN apt-get update 
 
-RUN apt-get install python3.6
+RUN apt-get -y install python3.6
 
 # Copy local code to the container image.
 ENV APP_HOME /app
