@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 RUN apt-get update 
 
-RUN apt-get -y install python3.6
+RUN apt-get -y install python3.6 python3-pip
 
 # Copy local code to the container image.
 ENV APP_HOME /app
@@ -10,7 +10,7 @@ WORKDIR $APP_HOME
 COPY . .
 
 # Install production dependencies.
-RUN pip3.6 install Flask gunicorn
+RUN pip3 install Flask gunicorn
 
 # Run the web service on container startup. Here we use the gunicorn
 # webserver, with one worker process and 8 threads.
